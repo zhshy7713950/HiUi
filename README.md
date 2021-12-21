@@ -28,3 +28,19 @@ AS
 3. 用[Android Studio 4.1](https://developer.android.com/studio/preview)及以上版本打开项目运行
 
 
+project的build.gradle中
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+}
+```
+
+```
+dependencies {
+	   implementation 'com.github.zhshy7713950:HiUi:Tag'
+}
+```
+最新Tag：![image](https://user-images.githubusercontent.com/17631163/146859656-f8704851-9260-476f-a04d-7713cc59e0db.png)
