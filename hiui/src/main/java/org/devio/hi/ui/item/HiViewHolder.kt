@@ -3,12 +3,9 @@ package org.devio.hi.ui.item
 import android.util.SparseArray
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.extensions.LayoutContainer
 
-class HiViewHolder(val view: View) : RecyclerView.ViewHolder(view), LayoutContainer {
-    override val containerView: View?
-        get() = view
-
+class HiViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+    
     private var viewCache = SparseArray<View>()
     fun <T : View> findViewById(viewId: Int): T? {
         var view = viewCache.get(viewId)
