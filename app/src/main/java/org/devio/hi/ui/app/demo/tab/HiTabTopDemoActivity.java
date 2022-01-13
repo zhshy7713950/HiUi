@@ -17,17 +17,12 @@ import java.util.List;
 
 public class HiTabTopDemoActivity extends AppCompatActivity {
     String[] tabsStr = new String[]{
-            "热门",
-            "服装",
-            "数码",
-            "鞋子",
-            "零食",
-            "家电",
-            "汽车",
-            "百货",
-            "家居",
-            "装修",
-            "运动"
+            "50AH",
+            "300价值",
+            "中证500",
+            "中证医疗",
+            "中证白酒",
+            "中证生物科技"
     };
 
     @Override

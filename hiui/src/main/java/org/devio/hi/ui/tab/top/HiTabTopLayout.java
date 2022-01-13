@@ -118,8 +118,6 @@ public class HiTabTopLayout extends HorizontalScrollView implements IHiTabLayout
         autoScroll(nextInfo);
     }
 
-    int tabWith;
-
     /**
      * 自动滚动，实现点击的位置能够自动滚动以展示前后2个
      *
@@ -133,9 +131,7 @@ public class HiTabTopLayout extends HorizontalScrollView implements IHiTabLayout
         //获取点击的控件在屏幕的位置
         tabTop.getLocationInWindow(loc);
         int scrollWidth;
-        if (tabWith == 0) {
-            tabWith = tabTop.getWidth();
-        }
+        int tabWith = tabTop.getWidth();
         //判断点击了屏幕左侧还是右侧
         if ((loc[0] + tabWith / 2) > HiDisplayUtil.getDisplayWidthInPx(getContext()) / 2) {
             scrollWidth = rangeScrollWidth(index, 2);
@@ -185,15 +181,16 @@ public class HiTabTopLayout extends HorizontalScrollView implements IHiTabLayout
         if (target == null) return 0;
         Rect rect = new Rect();
         target.getLocalVisibleRect(rect);
+        int targetWith = target.getWidth();
         if (toRight) {//点击屏幕右侧
-            if (rect.right > tabWith) {//right坐标大于控件的宽度时，说明完全没有显示
-                return tabWith;
+            if (rect.right > targetWith) {//right坐标大于控件的宽度时，说明完全没有显示
+                return targetWith;
             } else {//显示部分，减去已显示的宽度
-                return tabWith - rect.right;
+                return targetWith - rect.right;
             }
         } else {
-            if (rect.left <= -tabWith) {//left坐标小于等于-控件的宽度，说明完全没有显示
-                return tabWith;
+            if (rect.left <= -targetWith) {//left坐标小于等于-控件的宽度，说明完全没有显示
+                return targetWith;
             } else if (rect.left > 0) {//显示部分
                 return rect.left;
             }
