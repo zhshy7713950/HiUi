@@ -18,7 +18,7 @@ import java.lang.reflect.ParameterizedType
  *
  * bugfix:HiDataItem<*, out RecyclerView.ViewHolder>  都被改成了这样。否则会有类型转换问题
  */
-class HiAdapter(context: Context) : Adapter<ViewHolder>() {
+open class HiAdapter(context: Context) : Adapter<ViewHolder>() {
     private val recyclerViewRef: WeakReference<RecyclerView>? = null
     private var mContext: Context = context
     private var mInflater = LayoutInflater.from(context)
