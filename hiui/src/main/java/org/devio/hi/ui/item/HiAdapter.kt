@@ -77,6 +77,10 @@ open class HiAdapter(context: Context) : Adapter<ViewHolder>() {
         return dataSets.size
     }
 
+    fun getDataItems():ArrayList<HiDataItem<*, out ViewHolder>>{
+        return dataSets
+    }
+
 
     /**
      *在指定为上添加HiDataItem
