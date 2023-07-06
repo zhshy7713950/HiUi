@@ -42,9 +42,6 @@ public class HiTabTopLayout extends HorizontalScrollView implements IHiTabLayout
 
     @Override
     public void inflateInfo(@NonNull List<HiTabTopInfo<?>> infoList) {
-        if (infoList.isEmpty()) {
-            return;
-        }
         this.infoList = infoList;
         LinearLayout linearLayout = getRootLayout(true);
         selectedInfo = null;
